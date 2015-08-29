@@ -4,9 +4,10 @@
 #include <string>
 #include <list>
 #include <set.h>
+#include "builderset.h"
 
 static bool readAllFiles(std::list<std::string> files,Set *s, std::string *error);
-static void buildSet(const std::ofstream &curFile, Set *set);
+static void buildSet(const std::ifstream &curFile, Set *set);
 
 int main()
 {
@@ -30,9 +31,9 @@ static bool readAllFiles(std::list<std::string> files,Set *s, std::string *error
    for (std::string &fileName: files) {
 
       std::string fullFileName = "../SimulatedAnnealing/" + fileName;
-      std::ofstream curFile;
+      std::ifstream curFile;
 
-      curFile.open(fullFileName, std::ofstream::in);
+      curFile.open(fullFileName, std::ifstream::in);
 
       if (!curFile.is_open()) {
          error->clear();
@@ -47,7 +48,15 @@ static bool readAllFiles(std::list<std::string> files,Set *s, std::string *error
    return true;
 }
 
-static void buildSet(const std::ofstream &curFile, Set *set)
+static void buildSet(const std::ifstream &curFile, Set *set)
 {
+
+   BuilderSet builder;
+
+   std::string line;
+   while (!curFile.eof()) {
+      line.clear();
+      curFile >> line;
+   }
 
 }

@@ -17,9 +17,11 @@ TEMPLATE = app
 SOURCES += main.cpp \
     set.cpp \
     line.cpp \
-    column.cpp
+    column.cpp \
+    builderset.cpp
 
 HEADERS += \
     set.h \
     line.h \
-    column.h
+    column.h \
+    builderset.h
